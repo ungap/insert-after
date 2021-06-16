@@ -1,0 +1,2 @@
+/*! (c) Andrea Giammarchi - ISC */
+"insertAfter"in Node.prototype||Object.defineProperty(Node.prototype,"insertAfter",{configurable:!0,value(e,t){return this.insertBefore(e,t?t.nextSibling:this.firstChild)}});

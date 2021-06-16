@@ -1,0 +1,39 @@
+{
+  "name": "@ungap/insert-after",
+  "version": "0.0.0",
+  "description": "A Node.prototype.insertAfter polyfill",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "unpkg": "min.js",
+  "scripts": {
+    "build": "npm run cjs && npm run esm && npm run min",
+    "cjs": "cp index.js cjs/",
+    "esm": "cp index.js esm/",
+    "min": "terser index.js -c -m -o min.js",
+    "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c"
+  },
+  "keywords": [
+    "Element",
+    "Node",
+    "polyfill",
+    "insertAfter"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    "import": "./esm/index.js",
+    "default": "./cjs/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungap/insert-after.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ungap/insert-after/issues"
+  },
+  "homepage": "https://github.com/ungap/insert-after#readme",
+  "devDependencies": {
+    "terser": "^5.7.0"
+  }
+}
